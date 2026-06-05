@@ -1,7 +1,7 @@
 import { preloadAssets, OBJECTS } from '../../engine/level/TileRegistry.js';
 import { createObjectAnimations } from '../../engine/level/ObjectAnimations.js';
 
-const BASE = 'assets/SproutLands-Sprites';
+const BASE = './assets/SproutLands-Sprites';
 
 export class BootScene extends Phaser.Scene {
   constructor() { super('Boot'); }
