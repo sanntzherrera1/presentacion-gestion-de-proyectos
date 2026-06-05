@@ -698,7 +698,7 @@ node_modules/\t        Instalado — Vitest v4.1.7 + dependencias
 
       <div class="arcade-machine">
         <div class="arcade-screen">
-          <video id="demo-video-player" loop muted style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          <video id="demo-video-player" loop muted style="width: 100%; height: 100%; object-fit: contain; display: block;">
             <source src="demo_video/demo_lvl_1.mp4" type="video/mp4">
           </video>
         </div>
