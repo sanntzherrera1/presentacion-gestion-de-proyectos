@@ -688,17 +688,20 @@ node_modules/\t        Instalado — Vitest v4.1.7 + dependencias
   },
 
   // ========================================================
-  // Slide 13: Demo Visual (Arcade Machine)
+  // Slide 12: Demo en Video
   // ========================================================
   {
     id: 'slide-12',
     html: `
-      <h2>Demo Visual</h2>
-      <p class="text-center" style="margin-bottom: 0.3rem;">Identidad Visual del Juego &middot; Mapa de Muestra</p>
-      <p class="text-center" style="font-size: 0.85rem; color: var(--accent); margin-bottom: 0.75rem;">Nuestro personaje principal recorre un mapa de ejemplo con la estetica pixel-art del juego.</p>
+      <h2>Demo en Video</h2>
+      <p class="text-center" style="margin-bottom: 0.3rem;">Mecanicas de juego, recoleccion y editor de niveles.</p>
 
       <div class="arcade-machine">
-        <div class="arcade-screen" id="demo-container"></div>
+        <div class="arcade-screen">
+          <video id="demo-video-player" loop muted style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            <source src="demo_video/demo_lvl_1.mp4" type="video/mp4">
+          </video>
+        </div>
         <div class="arcade-controls">
           <div class="arcade-stick"></div>
           <div class="arcade-btn red"></div>
@@ -709,10 +712,15 @@ node_modules/\t        Instalado — Vitest v4.1.7 + dependencias
       ${CORNERS}
     `,
     onEnter: () => {
-      startDemo('demo-container');
+      const v = document.getElementById('demo-video-player');
+      if (v) {
+        v.currentTime = 0;
+        v.play().catch(() => {});
+      }
     },
     onLeave: () => {
-      stopDemo();
+      const v = document.getElementById('demo-video-player');
+      if (v) v.pause();
     }
   },
 
